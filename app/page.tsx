@@ -147,8 +147,8 @@ export default function Home() {
         <div className="contact-wrap">
           <div className="contact-card">
             <h3>ช่องทางติดต่อ</h3>
-            <div className="contact-line">📞 โทร: 080-000-0000</div>
-            <div className="contact-line">💬 LINE OA: @samainiyom</div>
+            <div className="contact-line">📞 โทร: 089-836-3367</div>
+            <div className="contact-line">💬 LINE OA: 0828263229</div>
             <div className="contact-line">📍 พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ตามตกลง</div>
             <div className="contact-line">⏰ เวลาทำการ: ติดต่อประสานงานได้ทุกวัน</div>
             <div className="hero-actions contact-actions">
