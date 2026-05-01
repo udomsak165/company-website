@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "SAMAINIYOM LOGISTICS",
+  title: "SAMAINIYOM KHONSONG",
   description: "สมัยนิยม ขนส่งหิน–ทราย และวัสดุก่อสร้าง",
 };
 
