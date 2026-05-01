@@ -16,6 +16,7 @@
   --dodger: #1e90ff;
   --steel: #4682b4;
   --soft: #f5f7ff;
+  --ink: #10162f;
 }
 
 * { box-sizing: border-box; }
@@ -36,7 +37,8 @@ a { color: inherit; text-decoration: none; }
 .page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top right, rgba(100,149,237,0.22), transparent 34%),
+    radial-gradient(circle at top right, rgba(100,149,237,0.24), transparent 34%),
+    radial-gradient(circle at 10% 20%, rgba(123,104,238,0.12), transparent 28%),
     linear-gradient(180deg, #ffffff 0%, #f6f8ff 45%, #ffffff 100%);
 }
 
@@ -163,7 +165,19 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.85;
   color: #2d355a;
   max-width: 640px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
+}
+
+.service-area {
+  display: inline-flex;
+  margin-bottom: 26px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: white;
+  color: var(--midnight);
+  font-weight: 800;
+  border: 1px solid rgba(25,25,112,0.12);
+  box-shadow: 0 16px 36px rgba(25,25,112,0.08);
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -203,95 +217,109 @@ a { color: inherit; text-decoration: none; }
 .hero-note {
   margin-top: 20px;
   display: flex;
-  gap: 18px;
+  gap: 12px;
   flex-wrap: wrap;
   color: #58607f;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
+}
+
+.hero-note span {
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(25,25,112,0.1);
 }
 
 .hero-visual { position: relative; }
 
-.main-card {
+.premium-hero-visual { min-height: 540px; }
+
+.hero-truck-card {
   position: relative;
-  border-radius: 34px;
+  border-radius: 38px;
+  min-height: 540px;
   padding: 28px;
-  background: linear-gradient(145deg, var(--midnight), #111849 55%, var(--darkslate));
-  min-height: 520px;
   overflow: hidden;
-  color: white;
-  box-shadow: 0 34px 80px rgba(25,25,112,0.34);
-}
-
-.main-card::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
   background:
-    radial-gradient(circle, rgba(132,112,255,0.4), transparent 35%),
-    radial-gradient(circle at 70% 20%, rgba(30,144,255,0.45), transparent 30%);
-  animation: floatGlow 8s ease-in-out infinite alternate;
+    radial-gradient(circle at 50% 40%, rgba(132,112,255,0.34), transparent 34%),
+    linear-gradient(145deg, #ffffff 0%, #eef3ff 42%, #dce7ff 100%);
+  border: 1px solid rgba(25,25,112,0.12);
+  box-shadow: 0 38px 90px rgba(25,25,112,0.20), inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-@keyframes floatGlow {
-  from { transform: translate(-20px, -10px); }
-  to { transform: translate(30px, 20px); }
+.hero-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(30,144,255,0.34), transparent 60%);
+  animation: premiumGlow 5s ease-in-out infinite alternate;
 }
 
 .card-topline {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: rgba(255,255,255,0.7);
+  color: #526080;
   font-size: 13px;
+  font-weight: 800;
 }
 
 .card-topline b {
-  color: #b9d4ff;
-  background: rgba(255,255,255,0.12);
+  color: white;
+  background: linear-gradient(135deg, var(--midnight), var(--royal));
   padding: 6px 10px;
   border-radius: 999px;
 }
 
-.card-content { position: relative; z-index: 2; }
-
-.truck-emoji {
-  font-size: 118px;
-  line-height: 1;
-  margin: 18px 0;
-  filter: drop-shadow(0 18px 22px rgba(0,0,0,0.28));
+.hero-truck-img {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  width: 96%;
+  max-height: 420px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 36px 42px rgba(0,0,0,0.32));
+  z-index: 2;
+  transition: 0.45s ease;
 }
 
-.card-title { font-size: 30px; font-weight: 900; margin-bottom: 8px; }
+.hero-truck-card:hover .hero-truck-img { transform: translate(-50%, -53%) scale(1.04); }
 
-.card-sub { color: rgba(255,255,255,0.72); line-height: 1.7; }
-
-.stats-grid {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+.hero-truck-info {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 4;
+  background: rgba(255,255,255,0.76);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(25,25,112,0.12);
+  border-radius: 24px;
+  padding: 20px;
+  color: var(--midnight);
+  box-shadow: 0 18px 38px rgba(25,25,112,0.10);
 }
 
-.stat-box {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 22px;
-  padding: 18px;
-  backdrop-filter: blur(12px);
+.hero-truck-info strong { display: block; font-size: 24px; font-weight: 900; }
+.hero-truck-info span { color: #56607f; font-weight: 700; }
+
+@keyframes premiumGlow {
+  from { opacity: 0.65; transform: translate(-50%, -50%) scale(0.94); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
-
-.stat-box strong { display: block; font-size: 32px; font-weight: 900; }
-
-.stat-box span { color: rgba(255,255,255,0.72); font-size: 13px; }
 
 .floating-badge {
   position: absolute;
   right: -18px;
   bottom: 36px;
-  z-index: 3;
+  z-index: 5;
   background: white;
   color: var(--midnight);
   border-radius: 22px;
@@ -369,7 +397,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 .service-card h3 { margin: 0 0 10px; font-size: 24px; color: var(--midnight); }
-
 .service-card p { margin: 0; line-height: 1.75; color: #56607f; }
 
 .about-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: stretch; }
@@ -394,9 +421,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-panel h3 { font-size: 34px; margin: 0 0 14px; color: white; }
-
 .about-panel p { line-height: 1.85; color: rgba(255,255,255,0.78); }
-
 .timeline { display: grid; gap: 14px; }
 
 .timeline-item {
@@ -408,11 +433,133 @@ a { color: inherit; text-decoration: none; }
 }
 
 .timeline-item strong { display: block; color: var(--midnight); font-size: 20px; margin-bottom: 5px; }
-
 .timeline-item span { color: #56607f; line-height: 1.7; }
 
-.why-section { background: linear-gradient(180deg, #f8faff, #eef3ff); }
+.premium-fleet { scroll-margin-top: 96px; }
 
+.premium-fleet-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+.premium-fleet-head h2 {
+  font-size: clamp(38px, 5vw, 68px);
+  margin: 0 0 14px;
+  color: #191970;
+  letter-spacing: -2px;
+}
+
+.premium-fleet-head p { max-width: 680px; line-height: 1.8; color: #4f5875; margin: 0; }
+
+.tesla-fleet-wrap { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 22px; }
+
+.tesla-main-card {
+  position: relative;
+  min-height: 620px;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(132,112,255,0.32), transparent 34%),
+    linear-gradient(145deg, #ffffff 0%, #eef3ff 42%, #dce7ff 100%);
+  border: 1px solid rgba(25,25,112,0.12);
+  box-shadow: 0 40px 100px rgba(25,25,112,0.18), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.tesla-bg-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(30,144,255,0.36), transparent 60%);
+  filter: blur(4px);
+  animation: premiumGlow 5s ease-in-out infinite alternate;
+}
+
+.tesla-label { position: absolute; top: 30px; left: 30px; z-index: 3; }
+.tesla-label span, .tesla-side-top span { display: block; color: #4169e1; font-size: 12px; letter-spacing: 1.5px; font-weight: 900; margin-bottom: 6px; }
+.tesla-label strong, .tesla-side-top strong { color: #191970; font-size: 28px; font-weight: 900; }
+
+.tesla-truck-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92%;
+  max-height: 470px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 36px 42px rgba(0,0,0,0.34));
+  z-index: 2;
+  transition: 0.45s ease;
+}
+
+.tesla-main-card:hover .tesla-truck-main { transform: translate(-50%, -53%) scale(1.04); }
+
+.tesla-specs {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  z-index: 4;
+}
+
+.tesla-specs div {
+  background: rgba(255,255,255,0.76);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(25,25,112,0.12);
+  border-radius: 22px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(25,25,112,0.08);
+}
+
+.tesla-specs strong { display: block; color: #191970; font-size: 30px; font-weight: 900; }
+.tesla-specs span { color: #56607f; font-size: 13px; font-weight: 700; }
+
+.tesla-side-card {
+  min-height: 620px;
+  border-radius: 42px;
+  padding: 30px;
+  background: linear-gradient(160deg, #191970 0%, #483d8b 52%, #4169e1 100%);
+  color: white;
+  box-shadow: 0 40px 100px rgba(25,25,112,0.26);
+  position: relative;
+  overflow: hidden;
+}
+
+.tesla-side-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 70% 25%, rgba(255,255,255,0.26), transparent 30%);
+}
+
+.tesla-side-top { position: relative; z-index: 2; }
+.tesla-side-top span { color: #bcd7ff; }
+.tesla-side-top strong { color: white; }
+
+.tesla-truck-side {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  margin: 40px 0 20px;
+  filter: drop-shadow(0 30px 34px rgba(0,0,0,0.38));
+  transition: 0.45s ease;
+}
+
+.tesla-side-card:hover .tesla-truck-side { transform: scale(1.06) translateY(-8px); }
+.tesla-side-card p { position: relative; z-index: 2; line-height: 1.8; color: rgba(255,255,255,0.78); font-weight: 500; }
+
+.why-section { background: linear-gradient(180deg, #f8faff, #eef3ff); }
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 
 .why-card {
@@ -425,11 +572,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .why-card:hover { transform: translateY(-6px); }
-
 .why-card b { color: var(--royal); font-size: 26px; }
-
 .why-card h3 { margin: 12px 0 8px; color: var(--midnight); }
-
 .why-card p { color: #56607f; line-height: 1.7; margin: 0; }
 
 .driver-box {
@@ -447,53 +591,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .driver-box h2 { color: white; }
-
 .driver-kicker { color: #d9e6ff; }
-
 .driver-desc { font-size: 18px; line-height: 1.85; color: rgba(255,255,255,0.78); }
-
 .driver-list { display: grid; gap: 12px; margin-top: 20px; }
-
-.driver-list div {
-  background: rgba(255,255,255,0.12);
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  font-weight: 700;
-}
-
-.driver-card {
-  background: white;
-  color: var(--midnight);
-  border-radius: 28px;
-  padding: 26px;
-}
-
+.driver-list div { background: rgba(255,255,255,0.12); padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.12); font-weight: 700; }
+.driver-card { background: white; color: var(--midnight); border-radius: 28px; padding: 26px; }
 .driver-card h3 { font-size: 28px; margin: 0 0 12px; }
-
 .driver-card p { color: #56607f; line-height: 1.7; }
 
 .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-
-.contact-card {
-  background: white;
-  border-radius: 30px;
-  padding: 30px;
-  border: 1px solid rgba(25,25,112,0.12);
-  box-shadow: 0 22px 54px rgba(25,25,112,0.08);
-}
-
+.contact-card { background: white; border-radius: 30px; padding: 30px; border: 1px solid rgba(25,25,112,0.12); box-shadow: 0 22px 54px rgba(25,25,112,0.08); }
 .contact-card h3 { margin: 0 0 14px; font-size: 28px; color: var(--midnight); }
-
-.contact-line {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(25,25,112,0.1);
-  font-weight: 700;
-  color: #344061;
-}
-
+.contact-line { padding: 14px 0; border-bottom: 1px solid rgba(25,25,112,0.1); font-weight: 700; color: #344061; }
 .contact-actions { margin-top: 22px; }
-
 .quote-form { display: grid; gap: 12px; }
 
 .input {
@@ -507,144 +617,21 @@ a { color: inherit; text-decoration: none; }
   background: white;
 }
 
-.input:focus {
-  border-color: var(--royal);
-  box-shadow: 0 0 0 4px rgba(65,105,225,0.12);
-}
-
+.input:focus { border-color: var(--royal); box-shadow: 0 0 0 4px rgba(65,105,225,0.12); }
 textarea.input { min-height: 120px; resize: vertical; }
 
-.footer {
-  background: #070b2f;
-  color: white;
-  padding: 34px 16px;
-  text-align: center;
-}
-
+.footer { background: #070b2f; color: white; padding: 34px 16px; text-align: center; }
 .footer b { display: block; margin-bottom: 8px; font-size: 20px; }
-
 .footer span { color: rgba(255,255,255,0.72); }
 
 @media (max-width: 980px) {
-  .hero, .about-wrap, .driver-box, .contact-wrap { grid-template-columns: 1fr; }
-
+  .hero, .about-wrap, .driver-box, .contact-wrap, .tesla-fleet-wrap { grid-template-columns: 1fr; }
   .service-grid, .why-grid { grid-template-columns: 1fr; }
-
-  .nav-inner {
-    height: auto;
-    padding: 14px 0;
-    align-items: flex-start;
-    gap: 14px;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-  }
-
+  .nav-inner { height: auto; padding: 14px 0; align-items: flex-start; gap: 14px; flex-direction: column; }
+  .nav-links { width: 100%; overflow-x: auto; padding-bottom: 4px; justify-content: flex-start; flex-wrap: nowrap; }
   .nav-links a { white-space: nowrap; }
-
-  .section-head { align-items: flex-start; flex-direction: column; }
-
+  .section-head, .premium-fleet-head { align-items: flex-start; flex-direction: column; }
   .floating-badge { position: static; margin-top: 14px; }
-
-  .main-card { min-height: auto; }
-
-  .stats-grid { grid-template-columns: 1fr; }
-}
-.fleet-section {
-  scroll-margin-top: 100px;
-}
-
-.fleet-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 20px;
-}
-
-/* ตัวเอก */
-.fleet-main {
-  position: relative;
-  border-radius: 32px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #191970, #4169e1);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fleet-main img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.4));
-  transition: 0.3s;
-}
-
-.fleet-main:hover img {
-  transform: scale(1.05);
-}
-
-/* overlay */
-.fleet-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 16px;
-  border-radius: 20px;
-}
-
-.fleet-overlay strong {
-  display: block;
-  font-size: 20px;
-}
-
-.fleet-overlay span {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* ตัวรอง */
-.fleet-side {
-  position: relative;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fleet-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 20px;
-}
-
-/* badge */
-.fleet-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #4169e1;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-}
-
-/* mobile */
-@media (max-width: 900px) {
-  .fleet-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-truck-card, .tesla-main-card, .tesla-side-card { min-height: 520px; }
+  .tesla-specs { grid-template-columns: 1fr; }
 }
