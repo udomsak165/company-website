@@ -1,10 +1,80 @@
 const services = [
-  { icon: "🚛", title: "ขนส่งหิน–ทราย", desc: "บริการขนส่งหิน ทราย และวัสดุก่อสร้าง สำหรับไซต์งาน โรงงาน โครงการ และลูกค้าประจำ" },
-  { icon: "🏗️", title: "งานโครงการ", desc: "รองรับงานที่ต้องใช้รถหลายคัน วางแผนรอบรถ คุมรอบงาน และประสานงานหน้างาน" },
-  { icon: "🧰", title: "อู่ซ่อมบำรุง", desc: "ดูแลรถในระบบให้พร้อมใช้งาน ลดความเสี่ยงรถเสียกลางทาง และช่วยให้งานไม่สะดุด" },
-  { icon: "📍", title: "ติดตาม GPS", desc: "ติดตามรถเพื่อประสานงาน ดูสถานะ และเพิ่มความมั่นใจให้กับลูกค้าระหว่างขนส่ง" },
-  { icon: "📞", title: "ทีมประสานงาน", desc: "ทีมงานดูแลลูกค้า คนขับ และการจ่ายงาน เพื่อแก้ปัญหาหน้างานได้รวดเร็ว" },
-  { icon: "⏱️", title: "งานด่วน / งานประจำ", desc: "รองรับทั้งงานรายวัน งานประจำ และงานที่ต้องวางแผนรถล่วงหน้าตามรอบงานจริง" },
+  {
+    image: "/service1.png",
+    title: "ขนส่งหิน–ทราย",
+    desc: "บริการขนส่งหิน ทราย และวัสดุก่อสร้าง สำหรับไซต์งาน โรงงาน โครงการ และลูกค้าประจำ",
+    upload: "service1.png",
+  },
+  {
+    image: "/service2.png",
+    title: "งานโครงการ",
+    desc: "รองรับงานที่ต้องใช้รถหลายคัน วางแผนรอบรถ คุมรอบงาน และประสานงานหน้างาน",
+    upload: "service2.png",
+  },
+  {
+    image: "/service3.png",
+    title: "อู่ซ่อมบำรุง",
+    desc: "ดูแลรถในระบบให้พร้อมใช้งาน ลดความเสี่ยงรถเสียกลางทาง และช่วยให้งานไม่สะดุด",
+    upload: "service3.png",
+  },
+  {
+    image: "/service4.png",
+    title: "ติดตาม GPS",
+    desc: "ติดตามรถเพื่อประสานงาน ดูสถานะ และเพิ่มความมั่นใจให้กับลูกค้าระหว่างขนส่ง",
+    upload: "service4.png",
+  },
+  {
+    image: "/service5.png",
+    title: "ทีมประสานงาน",
+    desc: "ทีมงานดูแลลูกค้า คนขับ และการจ่ายงาน เพื่อแก้ปัญหาหน้างานได้รวดเร็ว",
+    upload: "service5.png",
+  },
+  {
+    image: "/service6.png",
+    title: "งานด่วน / งานประจำ",
+    desc: "รองรับทั้งงานรายวัน งานประจำ และงานที่ต้องวางแผนรถล่วงหน้าตามรอบงานจริง",
+    upload: "service6.png",
+  },
+];
+
+const vehicleTypes = [
+  {
+    image: "/truck1.png",
+    label: "TRUCK 1",
+    title: "รถตัวแม่",
+    desc: "รถหลักสำหรับงานหนัก งานขนส่งหิน–ทราย และงานโครงการที่ต้องการความพร้อมสูง",
+    upload: "truck1.png",
+  },
+  {
+    image: "/truck2.png",
+    label: "TRUCK 2",
+    title: "รถตัวลูก",
+    desc: "รถสำหรับเสริมรอบงาน ช่วยให้งานต่อเนื่อง คุมเที่ยวได้ดี และรองรับงานประจำรายวัน",
+    upload: "truck2.png",
+  },
+  {
+    image: "/truck3.png",
+    label: "TRUCK 3",
+    title: "รถงานโครงการ",
+    desc: "รถสำหรับงานไซต์ งานก่อสร้าง และงานที่ต้องวางแผนรอบรถล่วงหน้าเป็นระบบ",
+    upload: "truck3.png",
+  },
+];
+
+const galleryItems = [
+  { image: "/gallery1.png", title: "หน้างานจริง", desc: "เพิ่มภาพไซต์งาน จุดลงงาน หรือบรรยากาศการขนส่งจริง", upload: "gallery1.png" },
+  { image: "/gallery2.png", title: "ท่าทราย", desc: "เพิ่มภาพท่าทราย พื้นที่โหลด หรือบรรยากาศการจัดการวัสดุ", upload: "gallery2.png" },
+  { image: "/gallery3.png", title: "อู่ซ่อมบำรุง", desc: "เพิ่มภาพอู่ ช่าง หรือการดูแลรถภายในบริษัท", upload: "gallery3.png" },
+  { image: "/gallery4.png", title: "ทีมงาน", desc: "เพิ่มภาพทีมงาน คนขับ หรือบรรยากาศการทำงานของบริษัท", upload: "gallery4.png" },
+  { image: "/gallery5.png", title: "ขบวนรถ", desc: "เพิ่มภาพขบวนรถ หรือรถที่พร้อมให้บริการหลายคัน", upload: "gallery5.png" },
+  { image: "/gallery6.png", title: "งานส่งมอบ", desc: "เพิ่มภาพงานส่งวัสดุถึงปลายทาง หรือภาพผลงานที่น่าเชื่อถือ", upload: "gallery6.png" },
+];
+
+const partners = [
+  { image: "/partner1.png", name: "Partner 01", desc: "อัปโหลดโลโก้หรือภาพพาร์ทเนอร์ที่เคยร่วมงาน", upload: "partner1.png" },
+  { image: "/partner2.png", name: "Partner 02", desc: "ใส่ชื่อบริษัท/โครงการที่เคยใช้บริการได้", upload: "partner2.png" },
+  { image: "/partner3.png", name: "Partner 03", desc: "ใช้เป็นโลโก้ลูกค้า ผู้รับเหมา หรือโครงการ", upload: "partner3.png" },
+  { image: "/partner4.png", name: "Partner 04", desc: "เพิ่มความน่าเชื่อถือให้เว็บบริษัท", upload: "partner4.png" },
 ];
 
 const strengths = [
@@ -16,14 +86,16 @@ const strengths = [
   ["ระบบ", "ทำงานเป็นข้อมูล", "ต่อยอดกับ GPS, LINE, Dashboard และการจัดการภายในได้"],
 ];
 
-const uploadSlots = [
-  { title: "รถตัวแม่", file: "truck1.png", desc: "ใช้เป็นภาพหลักด้านบนของเว็บ" },
-  { title: "รถตัวลูก", file: "truck2.png", desc: "ใช้เป็นภาพรถรองในส่วนรถของเรา" },
-  { title: "หน้างานจริง", file: "gallery1.png", desc: "ภาพไซต์งานหรือจุดลงงาน" },
-  { title: "ท่าทราย", file: "gallery2.png", desc: "ภาพท่าทรายหรือพื้นที่โหลด" },
-  { title: "อู่ซ่อมบำรุง", file: "gallery3.png", desc: "ภาพอู่/ช่าง/การดูแลรถ" },
-  { title: "ทีมงาน", file: "gallery4.png", desc: "ภาพคนขับ ทีมงาน หรือบรรยากาศบริษัท" },
-];
+function ImagePlaceholder({ title, upload, desc, large = false }: { title: string; upload: string; desc?: string; large?: boolean }) {
+  return (
+    <div className={large ? "image-slot image-slot-large" : "image-slot"}>
+      <div className="image-slot-icon">＋</div>
+      <strong>{title}</strong>
+      <span>อัปโหลดไฟล์ <b>public/{upload}</b></span>
+      {desc ? <small>{desc}</small> : null}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -41,8 +113,9 @@ export default function Home() {
           <div className="nav-links">
             <a href="#services">บริการ</a>
             <a href="#about">เกี่ยวกับเรา</a>
-            <a href="#fleet">รถของเรา</a>
+            <a href="#fleet">ประเภทรถ</a>
             <a href="#gallery">แกลลอรี่</a>
+            <a href="#partners">พาร์ทเนอร์</a>
             <a href="#why">จุดเด่น</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
@@ -67,7 +140,7 @@ export default function Home() {
           <div className="service-area">📍 ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามพื้นที่ตกลง</div>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#quote">ขอใบเสนอราคาทันที →</a>
-            <a className="btn btn-secondary" href="#fleet">ดูรถของเรา</a>
+            <a className="btn btn-secondary" href="#fleet">ดูประเภทรถ</a>
           </div>
           <div className="hero-note">
             <span>✓ รถสิบล้อกว่า 100 คัน</span>
@@ -80,12 +153,13 @@ export default function Home() {
         <div className="hero-visual clean-hero-visual">
           <div className="upload-hero-card">
             <div className="upload-glow" />
-            <div className="upload-card-top"><span>HERO IMAGE</span><b>รออัปโหลด</b></div>
-            <div className="upload-placeholder upload-placeholder-hero">
-              <div className="upload-icon">📷</div>
-              <strong>พื้นที่ภาพหลัก</strong>
-              <span>อัปโหลดรูปชื่อ <b>truck1.png</b> เข้าโฟลเดอร์ <b>public/</b></span>
-            </div>
+            <div className="upload-card-top"><span>HERO IMAGE</span><b>อัปโหลดเองได้</b></div>
+            <ImagePlaceholder
+              large
+              title="พื้นที่ภาพหลัก"
+              upload="truck1.png"
+              desc="แนะนำใช้ภาพรถตัวแม่หรือรถที่ดูสง่าที่สุดของบริษัท"
+            />
           </div>
         </div>
       </section>
@@ -93,12 +167,14 @@ export default function Home() {
       <section id="services" className="section">
         <div className="section-head">
           <div><div className="kicker">OUR SERVICES</div><h2>บริการของเรา</h2></div>
-          <p className="section-desc">บริการขนส่งวัสดุก่อสร้างแบบครบระบบ ตั้งแต่รถ ท่าทราย ทีมงาน และการดูแลรถ เพื่อให้งานของลูกค้าไม่สะดุด</p>
+          <p className="section-desc">เปลี่ยนจากอิโมจิเป็นช่องภาพ เพื่อให้คุณอัปโหลดรูปแทนได้ เช่น รูปหน้างาน รูป GPS รูปอู่ หรือรูปทีมงาน</p>
         </div>
         <div className="service-grid">
           {services.map((item) => (
             <article className="service-card" key={item.title}>
-              <div className="service-icon">{item.icon}</div><h3>{item.title}</h3><p>{item.desc}</p>
+              <ImagePlaceholder title={item.title} upload={item.upload} desc="ใช้รูปแทนอิโมจิของบริการนี้" />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
             </article>
           ))}
         </div>
@@ -127,39 +203,54 @@ export default function Home() {
       <section id="fleet" className="section premium-fleet">
         <div className="premium-fleet-head compact-head">
           <div>
-            <div className="kicker">OUR FLEET</div>
-            <h2>รถตัวแม่ / รถตัวลูก</h2>
-            <p>ส่วนนี้เว้นช่องไว้ให้คุณใส่รูปเองผ่าน GitHub โดยอัปโหลดไฟล์เข้าโฟลเดอร์ public ตามชื่อที่กำหนด</p>
+            <div className="kicker">VEHICLE TYPES</div>
+            <h2>ประเภทรถของเรา</h2>
+            <p>แบ่งเป็น 3 ประเภทรถ พร้อมช่องอัปโหลดรูปและพื้นที่คำอธิบาย เพื่อให้ลูกค้าเข้าใจว่ารถแต่ละแบบเหมาะกับงานแบบไหน</p>
           </div>
-          <a className="btn btn-primary" href="#gallery">ดูวิธีอัปโหลดรูป</a>
+          <a className="btn btn-primary" href="#quote">ขอใบเสนอราคา</a>
         </div>
 
-        <div className="upload-fleet-grid">
-          <div className="upload-placeholder upload-fleet-main">
-            <div className="upload-icon">🚛</div>
-            <strong>รถตัวแม่</strong>
-            <span>อัปโหลดไฟล์ <b>public/truck1.png</b></span>
-          </div>
-          <div className="upload-placeholder upload-fleet-side">
-            <div className="upload-icon">🚚</div>
-            <strong>รถตัวลูก</strong>
-            <span>อัปโหลดไฟล์ <b>public/truck2.png</b></span>
-          </div>
+        <div className="vehicle-type-grid">
+          {vehicleTypes.map((item) => (
+            <article className="vehicle-type-card" key={item.title}>
+              <div className="vehicle-label">{item.label}</div>
+              <ImagePlaceholder title={item.title} upload={item.upload} desc="อัปโหลดภาพรถประเภทนี้" />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section id="gallery" className="section gallery-section">
         <div className="section-head">
           <div><div className="kicker">GALLERY</div><h2>แกลลอรี่ผลงาน</h2></div>
-          <p className="section-desc">วิธีเพิ่มรูป: ไปที่ GitHub → โฟลเดอร์ public → Add file → Upload files → อัปโหลดชื่อตามช่องด้านล่าง → Commit changes</p>
+          <p className="section-desc">แต่ละภาพมีช่องคำอธิบายใต้ภาพ คุณสามารถแก้ title/desc ในไฟล์ page.tsx ได้ และอัปโหลดรูปตามชื่อไฟล์ที่ระบุ</p>
         </div>
         <div className="gallery-upload-grid">
-          {uploadSlots.map((item) => (
-            <article className="upload-placeholder gallery-upload-card" key={item.file}>
-              <div className="upload-icon">📷</div>
-              <strong>{item.title}</strong>
-              <span>ไฟล์: <b>public/{item.file}</b></span>
-              <small>{item.desc}</small>
+          {galleryItems.map((item) => (
+            <article className="gallery-item-card" key={item.upload}>
+              <ImagePlaceholder title={item.title} upload={item.upload} desc="พื้นที่อัปโหลดภาพแกลลอรี่" />
+              <div className="gallery-text">
+                <strong>{item.title}</strong>
+                <span>{item.desc}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="partners" className="section partner-section">
+        <div className="section-head">
+          <div><div className="kicker">PARTNERS</div><h2>พาร์ทเนอร์ที่เคยร่วมงาน</h2></div>
+          <p className="section-desc">เพิ่มโลโก้หรือภาพบริษัท/โครงการที่เคยร่วมงาน เพื่อเพิ่มความน่าเชื่อถือให้เว็บ</p>
+        </div>
+        <div className="partner-grid">
+          {partners.map((item) => (
+            <article className="partner-card" key={item.upload}>
+              <ImagePlaceholder title={item.name} upload={item.upload} desc="อัปโหลดโลโก้พาร์ทเนอร์" />
+              <h3>{item.name}</h3>
+              <p>{item.desc}</p>
             </article>
           ))}
         </div>
