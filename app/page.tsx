@@ -178,3 +178,31 @@ export default function Home() {
     </main>
   );
 }
+<section id="fleet" className="section fleet-section">
+  <div className="section-head">
+    <div>
+      <div className="kicker">OUR FLEET</div>
+      <h2>รถขนส่งของเรา</h2>
+    </div>
+    <p className="section-desc">
+      รถสิบล้อพร้อมใช้งานกว่า 100 คัน รองรับงานทุกประเภท
+    </p>
+  </div>
+
+  <div className="fleet-grid">
+    {/* รถหลัก */}
+    <div className="fleet-main">
+      <img src="/truck1.png" alt="รถสิบล้อ สมัยนิยม" />
+      <div className="fleet-overlay">
+        <strong>รถหลักของบริษัท</strong>
+        <span>พร้อมใช้งาน รองรับงานขนส่งทุกประเภท</span>
+      </div>
+    </div>
+
+    {/* รถรอง */}
+    <div className="fleet-side">
+      <img src="/truck2.png" alt="ขบวนรถ" />
+      <div className="fleet-badge">Fleet Support</div>
+    </div>
+  </div>
+</section>
