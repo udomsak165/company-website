@@ -16,13 +16,13 @@ const strengths = [
   ["ระบบ", "ทำงานเป็นข้อมูล", "ต่อยอดกับ GPS, LINE, Dashboard และการจัดการภายในได้"],
 ];
 
-const galleryImages = [
-  { src: "/truck1.png", title: "รถตัวแม่", desc: "รถหลักของไลน์งานหนัก พร้อมลุยงานขนส่งหิน–ทราย" },
-  { src: "/truck2.png", title: "รถตัวลูก", desc: "รถเสริมรอบงาน ช่วยให้งานต่อเนื่องและคุมรอบได้ดี" },
-  { src: "/gallery1.png", title: "หน้างานจริง", desc: "อัปโหลดรูปชื่อ gallery1.png ในโฟลเดอร์ public" },
-  { src: "/gallery2.png", title: "ท่าทราย", desc: "อัปโหลดรูปชื่อ gallery2.png ในโฟลเดอร์ public" },
-  { src: "/gallery3.png", title: "อู่ซ่อมบำรุง", desc: "อัปโหลดรูปชื่อ gallery3.png ในโฟลเดอร์ public" },
-  { src: "/gallery4.png", title: "ทีมงาน", desc: "อัปโหลดรูปชื่อ gallery4.png ในโฟลเดอร์ public" },
+const uploadSlots = [
+  { title: "รถตัวแม่", file: "truck1.png", desc: "ใช้เป็นภาพหลักด้านบนของเว็บ" },
+  { title: "รถตัวลูก", file: "truck2.png", desc: "ใช้เป็นภาพรถรองในส่วนรถของเรา" },
+  { title: "หน้างานจริง", file: "gallery1.png", desc: "ภาพไซต์งานหรือจุดลงงาน" },
+  { title: "ท่าทราย", file: "gallery2.png", desc: "ภาพท่าทรายหรือพื้นที่โหลด" },
+  { title: "อู่ซ่อมบำรุง", file: "gallery3.png", desc: "ภาพอู่/ช่าง/การดูแลรถ" },
+  { title: "ทีมงาน", file: "gallery4.png", desc: "ภาพคนขับ ทีมงาน หรือบรรยากาศบริษัท" },
 ];
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       <nav className="nav">
         <div className="nav-inner">
           <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM KHONSONG">
-            <img src="/logo.png" alt="SAMAINIYOM KHONSONG" className="logo-img" />
+            <div className="logo-mark">ส</div>
             <div className="logo-text">
               SAMAINIYOM KHONSONG
               <span>สมัยนิยม ขนส่งหิน–ทราย</span>
@@ -54,7 +54,11 @@ export default function Home() {
       <section id="home" className="hero">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-dot" />ขนส่งหิน–ทรายสำหรับงานจริงหน้างาน</div>
-          <h1>ขนส่งหิน–ทราย<br /><span>รวดเร็ว ตรงเวลา เชื่อถือได้</span></h1>
+          <h1>
+            ขนส่งหิน–ทราย
+            <br />
+            <span>รวดเร็ว ตรงเวลา เชื่อถือได้</span>
+          </h1>
           <p className="hero-desc">
             SAMAINIYOM KHONSONG ให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง
             ด้วยรถสิบล้อกว่า 100 คัน รองรับงานโครงการ งานประจำ และงานเร่งด่วน
@@ -74,13 +78,13 @@ export default function Home() {
         </div>
 
         <div className="hero-visual clean-hero-visual">
-          <div className="hero-truck-card">
-            <div className="hero-glow" />
-            <div className="card-topline"><span>Fleet Ready</span><b>Online</b></div>
-            <img src="/truck1.png" alt="รถตัวแม่ สมัยนิยมขนส่ง" className="hero-truck-img" />
-            <div className="hero-truck-info">
-              <strong>รถตัวแม่</strong>
-              <span>เด่น สง่า พร้อมลุยงานขนส่งหิน–ทรายและงานโครงการ</span>
+          <div className="upload-hero-card">
+            <div className="upload-glow" />
+            <div className="upload-card-top"><span>HERO IMAGE</span><b>รออัปโหลด</b></div>
+            <div className="upload-placeholder upload-placeholder-hero">
+              <div className="upload-icon">📷</div>
+              <strong>พื้นที่ภาพหลัก</strong>
+              <span>อัปโหลดรูปชื่อ <b>truck1.png</b> เข้าโฟลเดอร์ <b>public/</b></span>
             </div>
           </div>
         </div>
@@ -107,7 +111,7 @@ export default function Home() {
         </div>
         <div className="about-wrap">
           <div className="about-panel">
-            <img src="/logo.png" alt="สมัยนิยม ขนส่ง" className="about-logo" />
+            <div className="brand-placeholder">SAMAINIYOM<br />KHONSONG</div>
             <h3>SAMAINIYOM KHONSONG</h3>
             <p>เราให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง โดยมีรถสิบล้อในระบบจำนวนมาก มีทีมประสานงาน มีระบบติดตามรถ และมีอู่ดูแลรถภายใน เพื่อให้ลูกค้าได้รับบริการที่ต่อเนื่องและเป็นระบบ</p>
           </div>
@@ -125,27 +129,21 @@ export default function Home() {
           <div>
             <div className="kicker">OUR FLEET</div>
             <h2>รถตัวแม่ / รถตัวลูก</h2>
-            <p>จัดวางให้รถเด่นเหมือนโชว์รูมออนไลน์ เห็นภาพชัดว่าเรามีรถพร้อมรองรับงานจริง ไม่ใช่แค่ข้อความบนเว็บ</p>
+            <p>ส่วนนี้เว้นช่องไว้ให้คุณใส่รูปเองผ่าน GitHub โดยอัปโหลดไฟล์เข้าโฟลเดอร์ public ตามชื่อที่กำหนด</p>
           </div>
-          <a className="btn btn-primary" href="#quote">ขอใบเสนอราคา</a>
+          <a className="btn btn-primary" href="#gallery">ดูวิธีอัปโหลดรูป</a>
         </div>
 
-        <div className="fleet-showcase">
-          <div className="mother-truck-card">
-            <div className="tesla-bg-glow" />
-            <div className="fleet-label"><span>TRUCK 1</span><strong>รถตัวแม่</strong></div>
-            <img src="/truck1.png" alt="รถตัวแม่ สมัยนิยมขนส่ง" className="mother-truck" />
-            <div className="fleet-specs">
-              <div><strong>งานหนัก</strong><span>ขนหิน–ทราย</span></div>
-              <div><strong>งานโครงการ</strong><span>พร้อมจัดรอบรถ</span></div>
-              <div><strong>GPS</strong><span>ติดตามงาน</span></div>
-            </div>
+        <div className="upload-fleet-grid">
+          <div className="upload-placeholder upload-fleet-main">
+            <div className="upload-icon">🚛</div>
+            <strong>รถตัวแม่</strong>
+            <span>อัปโหลดไฟล์ <b>public/truck1.png</b></span>
           </div>
-
-          <div className="child-truck-card">
-            <div className="child-top"><span>TRUCK 2</span><strong>รถตัวลูก</strong></div>
-            <img src="/truck2.png" alt="รถตัวลูก สมัยนิยมขนส่ง" className="child-truck" />
-            <p>เสริมรอบงานให้ต่อเนื่อง เหมาะกับงานที่ต้องคุมจำนวนเที่ยวและเวลาหน้างาน</p>
+          <div className="upload-placeholder upload-fleet-side">
+            <div className="upload-icon">🚚</div>
+            <strong>รถตัวลูก</strong>
+            <span>อัปโหลดไฟล์ <b>public/truck2.png</b></span>
           </div>
         </div>
       </section>
@@ -153,16 +151,15 @@ export default function Home() {
       <section id="gallery" className="section gallery-section">
         <div className="section-head">
           <div><div className="kicker">GALLERY</div><h2>แกลลอรี่ผลงาน</h2></div>
-          <p className="section-desc">เพิ่มรูปได้โดยอัปโหลดไฟล์เข้าโฟลเดอร์ public แล้วใช้ชื่อ gallery1.png, gallery2.png, gallery3.png, gallery4.png</p>
+          <p className="section-desc">วิธีเพิ่มรูป: ไปที่ GitHub → โฟลเดอร์ public → Add file → Upload files → อัปโหลดชื่อตามช่องด้านล่าง → Commit changes</p>
         </div>
-        <div className="gallery-grid">
-          {galleryImages.map((item, index) => (
-            <article className={index === 0 ? "gallery-card gallery-large" : "gallery-card"} key={item.src}>
-              <img src={item.src} alt={item.title} />
-              <div className="gallery-caption">
-                <strong>{item.title}</strong>
-                <span>{item.desc}</span>
-              </div>
+        <div className="gallery-upload-grid">
+          {uploadSlots.map((item) => (
+            <article className="upload-placeholder gallery-upload-card" key={item.file}>
+              <div className="upload-icon">📷</div>
+              <strong>{item.title}</strong>
+              <span>ไฟล์: <b>public/{item.file}</b></span>
+              <small>{item.desc}</small>
             </article>
           ))}
         </div>
