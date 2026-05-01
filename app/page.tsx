@@ -32,6 +32,7 @@ export default function Home() {
           <div className="nav-links">
             <a href="#services">บริการ</a>
             <a href="#about">เกี่ยวกับเรา</a>
+            <a href="#fleet">รถของเรา</a>
             <a href="#why">จุดเด่น</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
@@ -43,32 +44,33 @@ export default function Home() {
       <section id="home" className="hero">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-dot" />บริษัทขนส่งหิน–ทรายมืออาชีพ</div>
-          <h1>ขนส่งหิน–ทราย<br /><span>รวดเร็ว ตรงเวลา</span></h1>
+          <h1>ขนส่งหิน–ทราย<br /><span>รวดเร็ว ตรงเวลา เชื่อถือได้</span></h1>
           <p className="hero-desc">
             SAMAINIYOM LOGISTICS ให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง
-            ด้วยรถสิบล้อกว่า 100 คัน พร้อมระบบ GPS ทีมประสานงาน และอู่ซ่อมบำรุงของบริษัท
-            เพื่อให้งานหน้างานเดินต่อได้อย่างมั่นใจ
+            ด้วยรถสิบล้อกว่า 100 คัน รองรับงานโครงการ งานประจำ และงานเร่งด่วน
+            มีระบบ GPS ติดตามรถทุกคัน พร้อมอู่ซ่อมบำรุงของบริษัท เพื่อให้งานหน้างานเดินต่อได้อย่างมั่นใจ
           </p>
+          <div className="service-area">📍 ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามพื้นที่ตกลง</div>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#quote">ขอใบเสนอราคา →</a>
+            <a className="btn btn-primary" href="#quote">ขอใบเสนอราคาทันที →</a>
             <a className="btn btn-secondary" href="#contact">ติดต่อเรา</a>
           </div>
-          <div className="hero-note"><span>✓ รถพร้อมใช้งาน</span><span>✓ มี GPS</span><span>✓ มีอู่ซ่อมบำรุง</span></div>
+          <div className="hero-note">
+            <span>✓ รถสิบล้อกว่า 100 คัน</span>
+            <span>✓ GPS ทุกคัน</span>
+            <span>✓ มีอู่ซ่อมบำรุงเอง</span>
+            <span>✓ รองรับงานโครงการ</span>
+          </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="main-card">
+        <div className="hero-visual premium-hero-visual">
+          <div className="hero-truck-card">
+            <div className="hero-glow" />
             <div className="card-topline"><span>Fleet Control</span><b>Online</b></div>
-            <div className="card-content">
-              <div className="truck-emoji">🚛</div>
-              <div className="card-title">ระบบขนส่งพร้อมลุยทุกงาน</div>
-              <div className="card-sub">รองรับงานโครงการ งานก่อสร้าง งานประจำ และงานเร่งด่วน ในกรุงเทพฯ ปริมณฑล และพื้นที่ให้บริการ</div>
-              <div className="stats-grid">
-                <div className="stat-box"><strong>100+</strong><span>รถสิบล้อในระบบ</span></div>
-                <div className="stat-box"><strong>GPS</strong><span>ติดตามรถทุกคัน</span></div>
-                <div className="stat-box"><strong>24/7</strong><span>ประสานงานต่อเนื่อง</span></div>
-                <div className="stat-box"><strong>อู่</strong><span>ซ่อมบำรุงภายใน</span></div>
-              </div>
+            <img src="/truck1.png" alt="รถสิบล้อสีขาว สมัยนิยมขนส่ง" className="hero-truck-img" />
+            <div className="hero-truck-info">
+              <strong>พร้อมรับงานขนส่ง</strong>
+              <span>หิน–ทราย / งานโครงการ / วัสดุก่อสร้าง</span>
             </div>
           </div>
           <div className="floating-badge">พร้อมรับงานขนส่ง<br />หิน–ทราย / งานโครงการ</div>
@@ -105,6 +107,36 @@ export default function Home() {
             <div className="timeline-item"><strong>2. วางแผนรถ</strong><span>ทีมงานตรวจสอบรถพร้อมใช้งาน วางรอบรถ และประสานงานคนขับ</span></div>
             <div className="timeline-item"><strong>3. ติดตามการขนส่ง</strong><span>ติดตามรถด้วย GPS และดูแลการสื่อสารระหว่างงาน</span></div>
             <div className="timeline-item"><strong>4. ส่งงานถึงปลายทาง</strong><span>เน้นความตรงเวลา ความเรียบร้อย และลดปัญหาหน้างานสะดุด</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fleet" className="section premium-fleet">
+        <div className="premium-fleet-head">
+          <div>
+            <div className="kicker">PREMIUM FLEET</div>
+            <h2>รถพร้อมลุยทุกงานขนส่ง</h2>
+            <p>รถสิบล้อของ SAMAINIYOM LOGISTICS พร้อมรองรับงานหิน–ทราย งานโครงการ และงานขนส่งวัสดุก่อสร้าง ด้วยระบบดูแลรถและติดตามงานแบบมืออาชีพ</p>
+          </div>
+          <a className="btn btn-primary" href="#quote">ขอใบเสนอราคา</a>
+        </div>
+
+        <div className="tesla-fleet-wrap">
+          <div className="tesla-main-card">
+            <div className="tesla-bg-glow" />
+            <div className="tesla-label"><span>FLAGSHIP TRUCK</span><strong>รถหลักพร้อมใช้งาน</strong></div>
+            <img src="/truck1.png" alt="รถสิบล้อสีขาว สมัยนิยมขนส่ง" className="tesla-truck-main" />
+            <div className="tesla-specs">
+              <div><strong>100+</strong><span>รถในระบบ</span></div>
+              <div><strong>GPS</strong><span>ติดตามทุกคัน</span></div>
+              <div><strong>24/7</strong><span>ประสานงาน</span></div>
+            </div>
+          </div>
+
+          <div className="tesla-side-card">
+            <div className="tesla-side-top"><span>SUPPORT FLEET</span><strong>ขบวนรถเสริมงาน</strong></div>
+            <img src="/truck2.png" alt="รถขนส่ง สมัยนิยม" className="tesla-truck-side" />
+            <p>เสริมกำลังรถสำหรับงานต่อเนื่อง งานโครงการ และงานที่ต้องควบคุมรอบรถ</p>
           </div>
         </div>
       </section>
@@ -147,9 +179,9 @@ export default function Home() {
         <div className="contact-wrap">
           <div className="contact-card">
             <h3>ช่องทางติดต่อ</h3>
-            <div className="contact-line">📞 โทร: 089-836-3367</div>
-            <div className="contact-line">💬 LINE OA: 0828263229</div>
-            <div className="contact-line">📍 พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ตามตกลง</div>
+            <div className="contact-line">📞 โทร: 080-000-0000</div>
+            <div className="contact-line">💬 LINE OA: @samainiyom</div>
+            <div className="contact-line">📍 พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามตกลง</div>
             <div className="contact-line">⏰ เวลาทำการ: ติดต่อประสานงานได้ทุกวัน</div>
             <div className="hero-actions contact-actions">
               <a className="btn btn-primary" href="tel:0800000000">โทรเลย</a>
@@ -178,31 +210,3 @@ export default function Home() {
     </main>
   );
 }
-<section id="fleet" className="section fleet-section">
-  <div className="section-head">
-    <div>
-      <div className="kicker">OUR FLEET</div>
-      <h2>รถขนส่งของเรา</h2>
-    </div>
-    <p className="section-desc">
-      รถสิบล้อพร้อมใช้งานกว่า 100 คัน รองรับงานทุกประเภท
-    </p>
-  </div>
-
-  <div className="fleet-grid">
-    {/* รถหลัก */}
-    <div className="fleet-main">
-      <img src="/truck1.png" alt="รถสิบล้อ สมัยนิยม" />
-      <div className="fleet-overlay">
-        <strong>รถหลักของบริษัท</strong>
-        <span>พร้อมใช้งาน รองรับงานขนส่งทุกประเภท</span>
-      </div>
-    </div>
-
-    {/* รถรอง */}
-    <div className="fleet-side">
-      <img src="/truck2.png" alt="ขบวนรถ" />
-      <div className="fleet-badge">Fleet Support</div>
-    </div>
-  </div>
-</section>
