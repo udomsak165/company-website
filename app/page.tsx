@@ -1,8 +1,8 @@
 const services = [
   { icon: "🚛", title: "ขนส่งหิน–ทราย", desc: "บริการขนส่งหิน ทราย และวัสดุก่อสร้าง สำหรับไซต์งาน โรงงาน โครงการ และลูกค้าประจำ" },
-  { icon: "🏗️", title: "งานโครงการ", desc: "รองรับงานที่ต้องใช้รถหลายคัน วางแผนรอบรถ คุมความต่อเนื่อง และประสานงานหน้างาน" },
+  { icon: "🏗️", title: "งานโครงการ", desc: "รองรับงานที่ต้องใช้รถหลายคัน วางแผนรอบรถ คุมรอบงาน และประสานงานหน้างาน" },
   { icon: "🧰", title: "อู่ซ่อมบำรุง", desc: "ดูแลรถในระบบให้พร้อมใช้งาน ลดความเสี่ยงรถเสียกลางทาง และช่วยให้งานไม่สะดุด" },
-  { icon: "📍", title: "ติดตาม GPS", desc: "ติดตามรถเพื่อประสานงาน ดูสถานะ และเพิ่มความมั่นใจให้กับลูกค้าในระหว่างขนส่ง" },
+  { icon: "📍", title: "ติดตาม GPS", desc: "ติดตามรถเพื่อประสานงาน ดูสถานะ และเพิ่มความมั่นใจให้กับลูกค้าระหว่างขนส่ง" },
   { icon: "📞", title: "ทีมประสานงาน", desc: "ทีมงานดูแลลูกค้า คนขับ และการจ่ายงาน เพื่อแก้ปัญหาหน้างานได้รวดเร็ว" },
   { icon: "⏱️", title: "งานด่วน / งานประจำ", desc: "รองรับทั้งงานรายวัน งานประจำ และงานที่ต้องวางแผนรถล่วงหน้าตามรอบงานจริง" },
 ];
@@ -13,7 +13,16 @@ const strengths = [
   ["อู่", "ซ่อมบำรุงภายใน", "ดูแลความพร้อมของรถ ลดความเสี่ยงจากรถเสียระหว่างขนส่ง"],
   ["ทีม", "ประสานงานจริง", "ดูแลลูกค้า คนขับ และรอบรถให้ทำงานเป็นระบบ"],
   ["ไซต์", "เข้าใจงานก่อสร้าง", "เข้าใจรอบโหลด จุดลงงาน และการจัดรถในไซต์งาน"],
-  ["ระบบ", "ทำงานเป็นข้อมูล", "ต่อยอดกับระบบ GPS, LINE, Dashboard และการจัดการภายในได้"],
+  ["ระบบ", "ทำงานเป็นข้อมูล", "ต่อยอดกับ GPS, LINE, Dashboard และการจัดการภายในได้"],
+];
+
+const galleryImages = [
+  { src: "/truck1.png", title: "รถตัวแม่", desc: "รถหลักของไลน์งานหนัก พร้อมลุยงานขนส่งหิน–ทราย" },
+  { src: "/truck2.png", title: "รถตัวลูก", desc: "รถเสริมรอบงาน ช่วยให้งานต่อเนื่องและคุมรอบได้ดี" },
+  { src: "/gallery1.png", title: "หน้างานจริง", desc: "อัปโหลดรูปชื่อ gallery1.png ในโฟลเดอร์ public" },
+  { src: "/gallery2.png", title: "ท่าทราย", desc: "อัปโหลดรูปชื่อ gallery2.png ในโฟลเดอร์ public" },
+  { src: "/gallery3.png", title: "อู่ซ่อมบำรุง", desc: "อัปโหลดรูปชื่อ gallery3.png ในโฟลเดอร์ public" },
+  { src: "/gallery4.png", title: "ทีมงาน", desc: "อัปโหลดรูปชื่อ gallery4.png ในโฟลเดอร์ public" },
 ];
 
 export default function Home() {
@@ -21,10 +30,10 @@ export default function Home() {
     <main className="page">
       <nav className="nav">
         <div className="nav-inner">
-          <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM LOGISTICS">
-            <img src="/logo.png" alt="SAMAINIYOM LOGISTICS" className="logo-img" />
+          <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM KHONSONG">
+            <img src="/logo.png" alt="SAMAINIYOM KHONSONG" className="logo-img" />
             <div className="logo-text">
-              SAMAINIYOM LOGISTICS
+              SAMAINIYOM KHONSONG
               <span>สมัยนิยม ขนส่งหิน–ทราย</span>
             </div>
           </a>
@@ -33,6 +42,7 @@ export default function Home() {
             <a href="#services">บริการ</a>
             <a href="#about">เกี่ยวกับเรา</a>
             <a href="#fleet">รถของเรา</a>
+            <a href="#gallery">แกลลอรี่</a>
             <a href="#why">จุดเด่น</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
@@ -43,17 +53,17 @@ export default function Home() {
 
       <section id="home" className="hero">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dot" />บริษัทขนส่งหิน–ทรายมืออาชีพ</div>
+          <div className="eyebrow"><span className="eyebrow-dot" />ขนส่งหิน–ทรายสำหรับงานจริงหน้างาน</div>
           <h1>ขนส่งหิน–ทราย<br /><span>รวดเร็ว ตรงเวลา เชื่อถือได้</span></h1>
           <p className="hero-desc">
-            SAMAINIYOM LOGISTICS ให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง
+            SAMAINIYOM KHONSONG ให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง
             ด้วยรถสิบล้อกว่า 100 คัน รองรับงานโครงการ งานประจำ และงานเร่งด่วน
-            มีระบบ GPS ติดตามรถทุกคัน พร้อมอู่ซ่อมบำรุงของบริษัท เพื่อให้งานหน้างานเดินต่อได้อย่างมั่นใจ
+            มีระบบ GPS ติดตามรถทุกคัน พร้อมอู่ซ่อมบำรุงของบริษัท
           </p>
           <div className="service-area">📍 ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามพื้นที่ตกลง</div>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#quote">ขอใบเสนอราคาทันที →</a>
-            <a className="btn btn-secondary" href="#contact">ติดต่อเรา</a>
+            <a className="btn btn-secondary" href="#fleet">ดูรถของเรา</a>
           </div>
           <div className="hero-note">
             <span>✓ รถสิบล้อกว่า 100 คัน</span>
@@ -63,17 +73,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual premium-hero-visual">
+        <div className="hero-visual clean-hero-visual">
           <div className="hero-truck-card">
             <div className="hero-glow" />
-            <div className="card-topline"><span>Fleet Control</span><b>Online</b></div>
-            <img src="/truck1.png" alt="รถสิบล้อสีขาว สมัยนิยมขนส่ง" className="hero-truck-img" />
+            <div className="card-topline"><span>Fleet Ready</span><b>Online</b></div>
+            <img src="/truck1.png" alt="รถตัวแม่ สมัยนิยมขนส่ง" className="hero-truck-img" />
             <div className="hero-truck-info">
-              <strong>พร้อมรับงานขนส่ง</strong>
-              <span>หิน–ทราย / งานโครงการ / วัสดุก่อสร้าง</span>
+              <strong>รถตัวแม่</strong>
+              <span>เด่น สง่า พร้อมลุยงานขนส่งหิน–ทรายและงานโครงการ</span>
             </div>
           </div>
-          <div className="floating-badge">พร้อมรับงานขนส่ง<br />หิน–ทราย / งานโครงการ</div>
         </div>
       </section>
 
@@ -99,7 +108,7 @@ export default function Home() {
         <div className="about-wrap">
           <div className="about-panel">
             <img src="/logo.png" alt="สมัยนิยม ขนส่ง" className="about-logo" />
-            <h3>SAMAINIYOM LOGISTICS</h3>
+            <h3>SAMAINIYOM KHONSONG</h3>
             <p>เราให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง โดยมีรถสิบล้อในระบบจำนวนมาก มีทีมประสานงาน มีระบบติดตามรถ และมีอู่ดูแลรถภายใน เพื่อให้ลูกค้าได้รับบริการที่ต่อเนื่องและเป็นระบบ</p>
           </div>
           <div className="timeline">
@@ -112,32 +121,50 @@ export default function Home() {
       </section>
 
       <section id="fleet" className="section premium-fleet">
-        <div className="premium-fleet-head">
+        <div className="premium-fleet-head compact-head">
           <div>
-            <div className="kicker">PREMIUM FLEET</div>
-            <h2>รถพร้อมลุยทุกงานขนส่ง</h2>
-            <p>รถสิบล้อของ SAMAINIYOM LOGISTICS พร้อมรองรับงานหิน–ทราย งานโครงการ และงานขนส่งวัสดุก่อสร้าง ด้วยระบบดูแลรถและติดตามงานแบบมืออาชีพ</p>
+            <div className="kicker">OUR FLEET</div>
+            <h2>รถตัวแม่ / รถตัวลูก</h2>
+            <p>จัดวางให้รถเด่นเหมือนโชว์รูมออนไลน์ เห็นภาพชัดว่าเรามีรถพร้อมรองรับงานจริง ไม่ใช่แค่ข้อความบนเว็บ</p>
           </div>
           <a className="btn btn-primary" href="#quote">ขอใบเสนอราคา</a>
         </div>
 
-        <div className="tesla-fleet-wrap">
-          <div className="tesla-main-card">
+        <div className="fleet-showcase">
+          <div className="mother-truck-card">
             <div className="tesla-bg-glow" />
-            <div className="tesla-label"><span>FLAGSHIP TRUCK</span><strong>รถหลักพร้อมใช้งาน</strong></div>
-            <img src="/truck1.png" alt="รถสิบล้อสีขาว สมัยนิยมขนส่ง" className="tesla-truck-main" />
-            <div className="tesla-specs">
-              <div><strong>100+</strong><span>รถในระบบ</span></div>
-              <div><strong>GPS</strong><span>ติดตามทุกคัน</span></div>
-              <div><strong>24/7</strong><span>ประสานงาน</span></div>
+            <div className="fleet-label"><span>TRUCK 1</span><strong>รถตัวแม่</strong></div>
+            <img src="/truck1.png" alt="รถตัวแม่ สมัยนิยมขนส่ง" className="mother-truck" />
+            <div className="fleet-specs">
+              <div><strong>งานหนัก</strong><span>ขนหิน–ทราย</span></div>
+              <div><strong>งานโครงการ</strong><span>พร้อมจัดรอบรถ</span></div>
+              <div><strong>GPS</strong><span>ติดตามงาน</span></div>
             </div>
           </div>
 
-          <div className="tesla-side-card">
-            <div className="tesla-side-top"><span>SUPPORT FLEET</span><strong>ขบวนรถเสริมงาน</strong></div>
-            <img src="/truck2.png" alt="รถขนส่ง สมัยนิยม" className="tesla-truck-side" />
-            <p>เสริมกำลังรถสำหรับงานต่อเนื่อง งานโครงการ และงานที่ต้องควบคุมรอบรถ</p>
+          <div className="child-truck-card">
+            <div className="child-top"><span>TRUCK 2</span><strong>รถตัวลูก</strong></div>
+            <img src="/truck2.png" alt="รถตัวลูก สมัยนิยมขนส่ง" className="child-truck" />
+            <p>เสริมรอบงานให้ต่อเนื่อง เหมาะกับงานที่ต้องคุมจำนวนเที่ยวและเวลาหน้างาน</p>
           </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="section gallery-section">
+        <div className="section-head">
+          <div><div className="kicker">GALLERY</div><h2>แกลลอรี่ผลงาน</h2></div>
+          <p className="section-desc">เพิ่มรูปได้โดยอัปโหลดไฟล์เข้าโฟลเดอร์ public แล้วใช้ชื่อ gallery1.png, gallery2.png, gallery3.png, gallery4.png</p>
+        </div>
+        <div className="gallery-grid">
+          {galleryImages.map((item, index) => (
+            <article className={index === 0 ? "gallery-card gallery-large" : "gallery-card"} key={item.src}>
+              <img src={item.src} alt={item.title} />
+              <div className="gallery-caption">
+                <strong>{item.title}</strong>
+                <span>{item.desc}</span>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -204,7 +231,7 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <b>SAMAINIYOM LOGISTICS</b>
+        <b>SAMAINIYOM KHONSONG</b>
         <span>สมัยนิยม ขนส่ง | ขนส่งหิน–ทราย | รถสิบล้อ | งานโครงการ | วัสดุก่อสร้าง</span>
       </footer>
     </main>
