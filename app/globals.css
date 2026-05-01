@@ -556,3 +556,95 @@ textarea.input { min-height: 120px; resize: vertical; }
 
   .stats-grid { grid-template-columns: 1fr; }
 }
+.fleet-section {
+  scroll-margin-top: 100px;
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 20px;
+}
+
+/* ตัวเอก */
+.fleet-main {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #191970, #4169e1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleet-main img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.4));
+  transition: 0.3s;
+}
+
+.fleet-main:hover img {
+  transform: scale(1.05);
+}
+
+/* overlay */
+.fleet-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.fleet-overlay strong {
+  display: block;
+  font-size: 20px;
+}
+
+.fleet-overlay span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ตัวรอง */
+.fleet-side {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleet-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+/* badge */
+.fleet-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #4169e1;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .fleet-grid {
+    grid-template-columns: 1fr;
+  }
+}
