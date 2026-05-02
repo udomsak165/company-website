@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 const services = [
   {
     image: "/service1.png",
@@ -100,6 +103,8 @@ function ImagePlaceholder({ title, upload, desc, large = false }: { title: strin
 }
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="page">
       <nav className="nav">
@@ -114,16 +119,30 @@ export default function Home() {
             </div>
           </a>
 
-          <div className="nav-links">
-            <a href="#services">บริการ</a>
-            <a href="#about">เกี่ยวกับเรา</a>
-            <a href="#why">จุดเด่น</a>
-            <a href="#fleet">ประเภทรถ</a>
-            <a href="#partners">พาร์ทเนอร์</a>
-            <a href="#gallery">แกลลอรี่</a>
-            <a href="#contact">ติดต่อ</a>
-            <a href="#driver">สมัครขับรถ</a>
-            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote"><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
+          <button
+            className="hamburger"
+            type="button"
+            aria-label="เปิดเมนู"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className={menuOpen ? "nav-links open" : "nav-links"}>
+            <a href="#services" onClick={() => setMenuOpen(false)}>บริการ</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>เกี่ยวกับเรา</a>
+            <a href="#owner" onClick={() => setMenuOpen(false)}>เจ้าของธุรกิจ</a>
+            <a href="#history" onClick={() => setMenuOpen(false)}>ความเป็นมา</a>
+            <a href="#why" onClick={() => setMenuOpen(false)}>จุดเด่น</a>
+            <a href="#fleet" onClick={() => setMenuOpen(false)}>ประเภทรถ</a>
+            <a href="#partners" onClick={() => setMenuOpen(false)}>พาร์ทเนอร์</a>
+            <a href="#gallery" onClick={() => setMenuOpen(false)}>แกลลอรี่</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>ติดต่อ</a>
+            <a href="#driver" onClick={() => setMenuOpen(false)}>สมัครขับรถ</a>
+            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote" onClick={() => setMenuOpen(false)}><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
           </div>
         </div>
       </nav>
@@ -194,6 +213,43 @@ export default function Home() {
             <div className="timeline-item"><strong>3. ติดตามการขนส่ง</strong><span>ติดตามรถด้วย GPS และดูแลการสื่อสารระหว่างงาน</span></div>
             <div className="timeline-item"><strong>4. ส่งงานถึงปลายทาง</strong><span>เน้นความตรงเวลา ความเรียบร้อย และลดปัญหาหน้างานสะดุด</span></div>
           </div>
+        </div>
+      </section>
+
+      <section id="owner" className="section owner-section">
+        <div className="section-head">
+          <div><div className="kicker">OWNER</div><h2>เจ้าของธุรกิจ</h2></div>
+          <p className="section-desc">พื้นที่สำหรับเล่าแนวคิด วิสัยทัศน์ และมาตรฐานการทำงานของผู้บริหารสมัยนิยม ขนส่ง</p>
+        </div>
+        <div className="owner-card">
+          <div className="owner-photo-slot">
+            <span>อัปโหลดรูปเจ้าของธุรกิจ</span>
+            <small>public/owner.png</small>
+          </div>
+          <div className="owner-content">
+            <h3>ขับเคลื่อนธุรกิจด้วยระบบ ความรับผิดชอบ และความตรงเวลา</h3>
+            <p>
+              สมัยนิยม ขนส่ง ให้ความสำคัญกับการทำงานที่ตรวจสอบได้ การดูแลรถให้พร้อมใช้งาน
+              และการประสานงานที่ชัดเจน เพื่อให้ลูกค้ามั่นใจได้ว่างานขนส่งหิน–ทรายทุกเที่ยวมีคนดูแลจริง
+            </p>
+            <div className="owner-points">
+              <span>✓ เน้นความปลอดภัย</span>
+              <span>✓ ทำงานเป็นระบบ</span>
+              <span>✓ ดูแลลูกค้าและคนขับ</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="history" className="section history-section">
+        <div className="section-head">
+          <div><div className="kicker">HISTORY</div><h2>ความเป็นมา</h2></div>
+          <p className="section-desc">จากธุรกิจขนส่งหน้างานจริง สู่ระบบขนส่งที่มีรถ ทีมงาน GPS และอู่ซ่อมบำรุงรองรับงานอย่างต่อเนื่อง</p>
+        </div>
+        <div className="history-grid">
+          <article className="history-card"><b>จุดเริ่มต้น</b><span>เริ่มจากงานขนส่งหิน–ทรายที่ต้องอาศัยความตรงเวลาและความพร้อมของรถ</span></article>
+          <article className="history-card"><b>การเติบโต</b><span>พัฒนากำลังรถ ทีมงาน และการประสานงานให้รองรับงานโครงการและงานประจำได้มากขึ้น</span></article>
+          <article className="history-card"><b>ปัจจุบัน</b><span>ต่อยอดด้วยระบบ GPS การจัดงานผ่านข้อมูล และการดูแลรถด้วยอู่ซ่อมบำรุงภายใน</span></article>
         </div>
       </section>
 
