@@ -170,7 +170,6 @@ export default function Home() {
         <div className="service-grid">
           {services.map((item) => (
             <article className="service-card service-card-clean" key={item.title}>
-              <div className="service-mini-badge">{item.title.slice(0, 1)}</div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </article>
@@ -293,10 +292,25 @@ export default function Home() {
         <div className="contact-wrap">
           <div className="contact-card">
             <h3>ช่องทางติดต่อ</h3>
-            <div className="contact-line">📞 โทร: 080-000-0000</div>
+            <div className="contact-line contact-line-icon">
+              <span className="contact-icon contact-icon-phone" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 2.4 2 1.7 2.5 1.2 3.2 1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-1.6 3.2Z" /></svg>
+              </span>
+              โทร: 080-000-0000
+            </div>
             <div className="contact-line contact-line-line"><span className="line-logo-mini">LINE</span> LINE OA: @samainiyom</div>
-            <div className="contact-line">📍 พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามตกลง</div>
-            <div className="contact-line">⏰ เวลาทำการ: ติดต่อประสานงานได้ทุกวัน</div>
+            <div className="contact-line contact-line-icon">
+              <span className="contact-icon contact-icon-map" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z" /></svg>
+              </span>
+              พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามตกลง
+            </div>
+            <div className="contact-line contact-line-icon">
+              <span className="contact-icon contact-icon-clock" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .1 0H12Zm1 5v4.4l3.4 2.1-1.1 1.8-4.3-2.6V7h2Z" /></svg>
+              </span>
+              เวลาทำการ: ติดต่อประสานงานได้ทุกวัน
+            </div>
             <div className="hero-actions contact-actions">
               <a className="btn btn-primary" href="tel:0800000000">โทรเลย</a>
               <a className="btn btn-secondary btn-line" href="https://line.me/ti/p/"><span className="line-logo-mini">LINE</span> แอด LINE</a>
