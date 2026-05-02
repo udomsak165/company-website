@@ -119,18 +119,6 @@ export default function Home() {
             </div>
           </a>
 
-          <button
-            className="hamburger"
-            type="button"
-            aria-label="เปิดเมนู"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
           <div className={menuOpen ? "nav-links open" : "nav-links"}>
             <a href="#services" onClick={() => setMenuOpen(false)}>บริการ</a>
             <a href="#about" onClick={() => setMenuOpen(false)}>เกี่ยวกับเรา</a>
@@ -142,8 +130,24 @@ export default function Home() {
             <a href="#gallery" onClick={() => setMenuOpen(false)}>แกลลอรี่</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>ติดต่อ</a>
             <a href="#driver" onClick={() => setMenuOpen(false)}>สมัครขับรถ</a>
-            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote" onClick={() => setMenuOpen(false)}><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
+            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote mobile-line-link" onClick={() => setMenuOpen(false)}><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
           </div>
+
+          <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote desktop-line-link">
+            <span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน
+          </a>
+
+          <button
+            className="hamburger"
+            type="button"
+            aria-label="เปิดเมนู"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
 
