@@ -111,10 +111,10 @@ export default function Home() {
           <div className="nav-links">
             <a href="#services">บริการ</a>
             <a href="#about">เกี่ยวกับเรา</a>
+            <a href="#why">จุดเด่น</a>
             <a href="#fleet">ประเภทรถ</a>
             <a href="#partners">พาร์ทเนอร์</a>
             <a href="#gallery">แกลลอรี่</a>
-            <a href="#why">จุดเด่น</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
             <a href="#quote" className="nav-quote">ขอใบเสนอราคา</a>
@@ -165,12 +165,12 @@ export default function Home() {
       <section id="services" className="section">
         <div className="section-head">
           <div><div className="kicker">OUR SERVICES</div><h2>บริการของเรา</h2></div>
-          <p className="section-desc">เปลี่ยนจากอิโมจิเป็นช่องภาพ เพื่อให้คุณอัปโหลดรูปแทนได้ เช่น รูปหน้างาน รูป GPS รูปอู่ หรือรูปทีมงาน</p>
+          <p className="section-desc">บริการหลักของบริษัท จัดให้กระชับ อ่านง่าย และดูเป็นระบบ เพื่อให้ลูกค้าเข้าใจทันทีว่าเรารองรับงานแบบไหน</p>
         </div>
         <div className="service-grid">
           {services.map((item) => (
-            <article className="service-card" key={item.title}>
-              <ImagePlaceholder title={item.title} upload={item.upload} desc="ใช้รูปแทนอิโมจิของบริการนี้" />
+            <article className="service-card service-card-clean" key={item.title}>
+              <div className="service-mini-badge">{item.title.slice(0, 1)}</div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </article>
@@ -185,7 +185,7 @@ export default function Home() {
         </div>
         <div className="about-wrap">
           <div className="about-panel">
-            <div className="brand-placeholder">SAMAINIYOM<br />KHONSONG</div>
+            <img src="/logo.png" alt="SAMAINIYOM KHONSONG" className="about-logo-large" />
             <h3>SAMAINIYOM KHONSONG</h3>
             <p>เราให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง โดยมีรถสิบล้อในระบบจำนวนมาก มีทีมประสานงาน มีระบบติดตามรถ และมีอู่ดูแลรถภายใน เพื่อให้ลูกค้าได้รับบริการที่ต่อเนื่องและเป็นระบบ</p>
           </div>
@@ -194,6 +194,20 @@ export default function Home() {
             <div className="timeline-item"><strong>2. วางแผนรถ</strong><span>ทีมงานตรวจสอบรถพร้อมใช้งาน วางรอบรถ และประสานงานคนขับ</span></div>
             <div className="timeline-item"><strong>3. ติดตามการขนส่ง</strong><span>ติดตามรถด้วย GPS และดูแลการสื่อสารระหว่างงาน</span></div>
             <div className="timeline-item"><strong>4. ส่งงานถึงปลายทาง</strong><span>เน้นความตรงเวลา ความเรียบร้อย และลดปัญหาหน้างานสะดุด</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="why-section">
+        <div className="section">
+          <div className="section-head">
+            <div><div className="kicker">WHY CHOOSE US</div><h2>จุดเด่นของเรา</h2></div>
+            <p className="section-desc">ไม่ใช่แค่มีรถ แต่ต้องมีระบบ คนดูแล และความพร้อมในการแก้ปัญหาหน้างานจริง</p>
+          </div>
+          <div className="why-grid">
+            {strengths.map(([no, title, desc]) => (
+              <article className="why-card" key={title}><b>{no}</b><h3>{title}</h3><p>{desc}</p></article>
+            ))}
           </div>
         </div>
       </section>
@@ -254,19 +268,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why" className="why-section">
-        <div className="section">
-          <div className="section-head">
-            <div><div className="kicker">WHY CHOOSE US</div><h2>จุดเด่นของเรา</h2></div>
-            <p className="section-desc">ไม่ใช่แค่มีรถ แต่ต้องมีระบบ คนดูแล และความพร้อมในการแก้ปัญหาหน้างานจริง</p>
-          </div>
-          <div className="why-grid">
-            {strengths.map(([no, title, desc]) => (
-              <article className="why-card" key={title}><b>{no}</b><h3>{title}</h3><p>{desc}</p></article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="driver" className="section">
         <div className="driver-box">
@@ -293,12 +294,12 @@ export default function Home() {
           <div className="contact-card">
             <h3>ช่องทางติดต่อ</h3>
             <div className="contact-line">📞 โทร: 080-000-0000</div>
-            <div className="contact-line">💬 LINE OA: @samainiyom</div>
+            <div className="contact-line contact-line-line"><span className="line-logo-mini">LINE</span> LINE OA: @samainiyom</div>
             <div className="contact-line">📍 พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามตกลง</div>
             <div className="contact-line">⏰ เวลาทำการ: ติดต่อประสานงานได้ทุกวัน</div>
             <div className="hero-actions contact-actions">
               <a className="btn btn-primary" href="tel:0800000000">โทรเลย</a>
-              <a className="btn btn-secondary" href="https://line.me/ti/p/">แอด LINE</a>
+              <a className="btn btn-secondary btn-line" href="https://line.me/ti/p/"><span className="line-logo-mini">LINE</span> แอด LINE</a>
             </div>
           </div>
 
