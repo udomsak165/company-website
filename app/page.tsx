@@ -62,12 +62,10 @@ const vehicleTypes = [
 ];
 
 const galleryItems = [
-  { image: "/gallery1.png", title: "หน้างานจริง", desc: "เพิ่มภาพไซต์งาน จุดลงงาน หรือบรรยากาศการขนส่งจริง", upload: "gallery1.png" },
+  { image: "/gallery1.png", title: "ภาพหลักของผลงาน", desc: "ใช้เป็นภาพยาวหลัก เช่น ขบวนรถ หน้างานใหญ่ หรือภาพที่อยากให้เด่นที่สุด", upload: "gallery1.png" },
   { image: "/gallery2.png", title: "ท่าทราย", desc: "เพิ่มภาพท่าทราย พื้นที่โหลด หรือบรรยากาศการจัดการวัสดุ", upload: "gallery2.png" },
   { image: "/gallery3.png", title: "อู่ซ่อมบำรุง", desc: "เพิ่มภาพอู่ ช่าง หรือการดูแลรถภายในบริษัท", upload: "gallery3.png" },
-  { image: "/gallery4.png", title: "ทีมงาน", desc: "เพิ่มภาพทีมงาน คนขับ หรือบรรยากาศการทำงานของบริษัท", upload: "gallery4.png" },
-  { image: "/gallery5.png", title: "ขบวนรถ", desc: "เพิ่มภาพขบวนรถ หรือรถที่พร้อมให้บริการหลายคัน", upload: "gallery5.png" },
-  { image: "/gallery6.png", title: "งานส่งมอบ", desc: "เพิ่มภาพงานส่งวัสดุถึงปลายทาง หรือภาพผลงานที่น่าเชื่อถือ", upload: "gallery6.png" },
+  { image: "/gallery4.png", title: "ทีมงาน / หน้างาน", desc: "เพิ่มภาพทีมงาน คนขับ หรือบรรยากาศการทำงานจริง", upload: "gallery4.png" },
 ];
 
 const partners = [
@@ -114,8 +112,8 @@ export default function Home() {
             <a href="#services">บริการ</a>
             <a href="#about">เกี่ยวกับเรา</a>
             <a href="#fleet">ประเภทรถ</a>
-            <a href="#gallery">แกลลอรี่</a>
             <a href="#partners">พาร์ทเนอร์</a>
+            <a href="#gallery">แกลลอรี่</a>
             <a href="#why">จุดเด่น</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
@@ -222,10 +220,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="partners" className="section partner-section">
+        <div className="section-head">
+          <div><div className="kicker">PARTNERS</div><h2>พาร์ทเนอร์ที่เคยร่วมงาน</h2></div>
+          <p className="section-desc">เพิ่มโลโก้หรือภาพบริษัท/โครงการที่เคยร่วมงาน ขนาดกระชับ อ่านง่าย และช่วยเพิ่มความน่าเชื่อถือ</p>
+        </div>
+        <div className="partner-grid">
+          {partners.map((item) => (
+            <article className="partner-card" key={item.upload}>
+              <ImagePlaceholder title={item.name} upload={item.upload} desc="อัปโหลดโลโก้พาร์ทเนอร์" />
+              <h3>{item.name}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="gallery" className="section gallery-section">
         <div className="section-head">
           <div><div className="kicker">GALLERY</div><h2>แกลลอรี่ผลงาน</h2></div>
-          <p className="section-desc">แต่ละภาพมีช่องคำอธิบายใต้ภาพ คุณสามารถแก้ title/desc ในไฟล์ page.tsx ได้ และอัปโหลดรูปตามชื่อไฟล์ที่ระบุ</p>
+          <p className="section-desc">แกลลอรี่จัดเป็นภาพหลักยาว 1 ช่อง และภาพย่อย 3 ช่อง พร้อมคำอธิบายใต้ภาพ</p>
         </div>
         <div className="gallery-upload-grid">
           {galleryItems.map((item) => (
@@ -235,22 +249,6 @@ export default function Home() {
                 <strong>{item.title}</strong>
                 <span>{item.desc}</span>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="partners" className="section partner-section">
-        <div className="section-head">
-          <div><div className="kicker">PARTNERS</div><h2>พาร์ทเนอร์ที่เคยร่วมงาน</h2></div>
-          <p className="section-desc">เพิ่มโลโก้หรือภาพบริษัท/โครงการที่เคยร่วมงาน เพื่อเพิ่มความน่าเชื่อถือให้เว็บ</p>
-        </div>
-        <div className="partner-grid">
-          {partners.map((item) => (
-            <article className="partner-card" key={item.upload}>
-              <ImagePlaceholder title={item.name} upload={item.upload} desc="อัปโหลดโลโก้พาร์ทเนอร์" />
-              <h3>{item.name}</h3>
-              <p>{item.desc}</p>
             </article>
           ))}
         </div>
