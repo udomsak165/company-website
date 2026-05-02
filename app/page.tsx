@@ -105,7 +105,9 @@ export default function Home() {
       <nav className="nav">
         <div className="nav-inner">
           <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM KHONSONG">
-            <div className="logo-mark">ส</div>
+            <div className="logo-frame">
+              <img src="/logo.png" alt="SAMAINIYOM KHONSONG" className="logo-img" />
+            </div>
             <div className="logo-text">
               SAMAINIYOM KHONSONG
               <span>สมัยนิยม ขนส่งหิน–ทราย</span>
@@ -132,7 +134,7 @@ export default function Home() {
           <h1>
             ขนส่งหิน–ทราย
             <br />
-            <span>รวดเร็ว ตรงเวลา เชื่อถือได้</span>
+            <span>รวดเร็ว เชื่อถือได้</span>
           </h1>
           <p className="hero-desc">
             SAMAINIYOM KHONSONG ให้บริการขนส่งหิน ทราย และวัสดุก่อสร้าง
