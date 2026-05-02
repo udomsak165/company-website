@@ -121,7 +121,7 @@ export default function Home() {
             <a href="#gallery">แกลลอรี่</a>
             <a href="#contact">ติดต่อ</a>
             <a href="#driver">สมัครขับรถ</a>
-            <a href="#quote" className="nav-quote">ขอใบเสนอราคา</a>
+            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote"><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
           </div>
         </div>
       </nav>
@@ -143,12 +143,6 @@ export default function Home() {
           <div className="hero-actions">
             <a className="btn btn-primary" href="#quote">ขอใบเสนอราคาทันที →</a>
             <a className="btn btn-secondary" href="#fleet">ดูประเภทรถ</a>
-          </div>
-          <div className="hero-note">
-            <span>✓ รถสิบล้อกว่า 100 คัน</span>
-            <span>✓ GPS ทุกคัน</span>
-            <span>✓ มีอู่ซ่อมบำรุงเอง</span>
-            <span>✓ รองรับงานโครงการ</span>
           </div>
         </div>
 
