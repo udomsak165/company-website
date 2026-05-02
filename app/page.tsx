@@ -104,10 +104,13 @@ function ImagePlaceholder({ title, upload, desc, large = false }: { title: strin
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showTop, setShowTop] = useState(false);
+  const [navAtTop, setNavAtTop] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => setShowTop(window.scrollY > 500);
+    const handleScroll = () => {
+      setNavAtTop(window.scrollY < 80);
+    };
+
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -115,7 +118,7 @@ export default function Home() {
 
   return (
     <main className="page">
-      <nav className="nav">
+      <nav className={navAtTop ? "nav nav-home" : "nav nav-scrolled"}>
         <div className="nav-inner">
           <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM KHONSONG">
             <div className="logo-frame">
@@ -418,16 +421,6 @@ export default function Home() {
         <b>SAMAINIYOM KHONSONG</b>
         <span>สมัยนิยม ขนส่ง | ขนส่งหิน–ทราย | รถสิบล้อ | งานโครงการ | วัสดุก่อสร้าง</span>
       </footer>
-      {showTop && (
-        <button
-          className="scroll-top"
-          type="button"
-          aria-label="เลื่อนขึ้นบนสุด"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          ↑
-        </button>
-      )}
     </main>
   );
 }
