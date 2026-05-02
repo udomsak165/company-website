@@ -119,24 +119,6 @@ export default function Home() {
             </div>
           </a>
 
-          <div className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="#services" onClick={() => setMenuOpen(false)}>บริการ</a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>เกี่ยวกับเรา</a>
-            <a href="#owner" onClick={() => setMenuOpen(false)}>เจ้าของธุรกิจ</a>
-            <a href="#history" onClick={() => setMenuOpen(false)}>ความเป็นมา</a>
-            <a href="#why" onClick={() => setMenuOpen(false)}>จุดเด่น</a>
-            <a href="#fleet" onClick={() => setMenuOpen(false)}>ประเภทรถ</a>
-            <a href="#partners" onClick={() => setMenuOpen(false)}>พาร์ทเนอร์</a>
-            <a href="#gallery" onClick={() => setMenuOpen(false)}>แกลลอรี่</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>ติดต่อ</a>
-            <a href="#driver" onClick={() => setMenuOpen(false)}>สมัครขับรถ</a>
-            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote mobile-line-link" onClick={() => setMenuOpen(false)}><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
-          </div>
-
-          <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote desktop-line-link">
-            <span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน
-          </a>
-
           <button
             className="hamburger"
             type="button"
@@ -148,6 +130,20 @@ export default function Home() {
             <span></span>
             <span></span>
           </button>
+
+          <div className={menuOpen ? "nav-links open" : "nav-links"}>
+            <a href="#services" onClick={() => setMenuOpen(false)}>บริการ</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>เกี่ยวกับเรา</a>
+            <a href="#owner" onClick={() => setMenuOpen(false)}>เจ้าของธุรกิจ</a>
+            <a href="#history" onClick={() => setMenuOpen(false)}>ความเป็นมา</a>
+            <a href="#why" onClick={() => setMenuOpen(false)}>จุดเด่น</a>
+            <a href="#fleet" onClick={() => setMenuOpen(false)}>ประเภทรถ</a>
+            <a href="#partners" onClick={() => setMenuOpen(false)}>พาร์ทเนอร์</a>
+            <a href="#gallery" onClick={() => setMenuOpen(false)}>แกลลอรี่</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>ติดต่อ</a>
+            <a href="#driver" onClick={() => setMenuOpen(false)}>สมัครขับรถ</a>
+            <a href="https://line.me/ti/p/" className="nav-quote nav-line-quote" onClick={() => setMenuOpen(false)}><span className="line-logo-nav">LINE</span> ติดต่อกับแอดมิน</a>
+          </div>
         </div>
       </nav>
 
