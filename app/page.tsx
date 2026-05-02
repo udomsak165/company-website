@@ -69,10 +69,14 @@ const galleryItems = [
 ];
 
 const partners = [
-  { image: "/partner1.png", name: "Partner 01", desc: "อัปโหลดโลโก้หรือภาพพาร์ทเนอร์ที่เคยร่วมงาน", upload: "partner1.png" },
-  { image: "/partner2.png", name: "Partner 02", desc: "ใส่ชื่อบริษัท/โครงการที่เคยใช้บริการได้", upload: "partner2.png" },
-  { image: "/partner3.png", name: "Partner 03", desc: "ใช้เป็นโลโก้ลูกค้า ผู้รับเหมา หรือโครงการ", upload: "partner3.png" },
-  { image: "/partner4.png", name: "Partner 04", desc: "เพิ่มความน่าเชื่อถือให้เว็บบริษัท", upload: "partner4.png" },
+  { image: "/partner1.png", upload: "partner1.png" },
+  { image: "/partner2.png", upload: "partner2.png" },
+  { image: "/partner3.png", upload: "partner3.png" },
+  { image: "/partner4.png", upload: "partner4.png" },
+  { image: "/partner5.png", upload: "partner5.png" },
+  { image: "/partner6.png", upload: "partner6.png" },
+  { image: "/partner7.png", upload: "partner7.png" },
+  { image: "/partner8.png", upload: "partner8.png" },
 ];
 
 const strengths = [
@@ -234,16 +238,15 @@ export default function Home() {
       </section>
 
       <section id="partners" className="section partner-section">
-        <div className="section-head">
+        <div className="section-head section-head-simple">
           <div><div className="kicker">PARTNERS</div><h2>พาร์ทเนอร์ที่เคยร่วมงาน</h2></div>
-          <p className="section-desc">เพิ่มโลโก้หรือภาพบริษัท/โครงการที่เคยร่วมงาน ขนาดกระชับ อ่านง่าย และช่วยเพิ่มความน่าเชื่อถือ</p>
         </div>
-        <div className="partner-grid">
+        <div className="partner-logo-grid">
           {partners.map((item) => (
-            <article className="partner-card" key={item.upload}>
-              <ImagePlaceholder title={item.name} upload={item.upload} desc="อัปโหลดโลโก้พาร์ทเนอร์" />
-              <h3>{item.name}</h3>
-              <p>{item.desc}</p>
+            <article className="partner-logo-card" key={item.upload}>
+              <div className="partner-image-slot" style={{ backgroundImage: `url(${item.image})` }}>
+                <span>public/{item.upload}</span>
+              </div>
             </article>
           ))}
         </div>
@@ -252,21 +255,35 @@ export default function Home() {
       <section id="gallery" className="section gallery-section">
         <div className="section-head">
           <div><div className="kicker">GALLERY</div><h2>แกลลอรี่ผลงาน</h2></div>
-          <p className="section-desc">แกลลอรี่จัดเป็นภาพหลักยาว 1 ช่อง และภาพย่อย 3 ช่อง พร้อมคำอธิบายใต้ภาพ</p>
+          <p className="section-desc">ภาพหลัก 1 ช่องอัตราส่วน 1:2 และภาพย่อย 3 ช่องสี่เหลี่ยมจัตุรัส พร้อมคำอธิบายใต้ภาพ</p>
         </div>
-        <div className="gallery-upload-grid">
-          {galleryItems.map((item) => (
-            <article className="gallery-item-card" key={item.upload}>
-              <ImagePlaceholder title={item.title} upload={item.upload} desc="พื้นที่อัปโหลดภาพแกลลอรี่" />
-              <div className="gallery-text">
-                <strong>{item.title}</strong>
-                <span>{item.desc}</span>
-              </div>
-            </article>
-          ))}
+
+        <div className="gallery-layout">
+          <article className="gallery-feature-card">
+            <div className="gallery-feature-image" style={{ backgroundImage: `url(${galleryItems[0].image})` }}>
+              <span>public/{galleryItems[0].upload}</span>
+            </div>
+            <div className="gallery-text">
+              <strong>{galleryItems[0].title}</strong>
+              <span>{galleryItems[0].desc}</span>
+            </div>
+          </article>
+
+          <div className="gallery-small-grid">
+            {galleryItems.slice(1).map((item) => (
+              <article className="gallery-small-card" key={item.upload}>
+                <div className="gallery-small-image" style={{ backgroundImage: `url(${item.image})` }}>
+                  <span>public/{item.upload}</span>
+                </div>
+                <div className="gallery-text">
+                  <strong>{item.title}</strong>
+                  <span>{item.desc}</span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-
 
       <section id="driver" className="section">
         <div className="driver-box">
@@ -304,6 +321,12 @@ export default function Home() {
                 <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z" /></svg>
               </span>
               พื้นที่ให้บริการ: กรุงเทพฯ / ปริมณฑล / ภาคกลาง / ตามตกลง
+            </div>
+            <div className="contact-line contact-line-icon">
+              <span className="contact-icon contact-icon-office" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 21V3h10v4h6v14h-7v-4H9v4H4Zm3-3h2v-2H7v2Zm0-4h2v-2H7v2Zm0-4h2V8H7v2Zm0-4h2V4H7v2Zm4 8h2v-2h-2v2Zm0-4h2V8h-2v2Zm0-4h2V4h-2v2Zm4 12h2v-2h-2v2Zm0-4h2v-2h-2v2Zm0-4h2V8h-2v2Z" /></svg>
+              </span>
+              สถานที่ตั้งบริษัท: ต.ทุ่งลูกนก อ.กำแพงแสน จ.นครปฐม
             </div>
             <div className="contact-line contact-line-icon">
               <span className="contact-icon contact-icon-clock" aria-hidden="true">
