@@ -1700,8 +1700,51 @@ textarea.input { min-height: 120px; resize: vertical; }
 }
 
 
-/* ===== FINAL NAV COLOR BY SCROLL ===== */
-/* หน้าแรก: แถบเมนูตัวหนังสือสีขาว */
+/* =========================================================
+   FINAL FULL VERSION PATCH — LOGO FULL NAME + NAV + MOBILE
+   ========================================================= */
+
+/* แก้ชื่อ SAMAINIYOM KHONSONG ไม่ให้โดนตัดเป็น ... */
+.logo-wrap {
+  min-width: 0 !important;
+  max-width: none !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+.logo-text {
+  display: block !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: none !important;
+  width: auto !important;
+  font-size: clamp(14px, 3.4vw, 18px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.35px !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.logo-text span {
+  display: block !important;
+  color: rgba(255,255,255,0.82) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: none !important;
+  width: auto !important;
+  font-size: clamp(10px, 2.5vw, 12px) !important;
+  line-height: 1.25 !important;
+}
+
+/* หน้าแรก: เมนูแถบบนพื้นน้ำเงิน ตัวหนังสือขาว */
 .nav.nav-home {
   background: linear-gradient(135deg, rgba(25,25,112,0.98), rgba(65,105,225,0.94), rgba(30,144,255,0.88)) !important;
 }
@@ -1711,9 +1754,10 @@ textarea.input { min-height: 120px; resize: vertical; }
 .nav.nav-home .nav-links a {
   color: #ffffff !important;
   opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* หน้าถัดไป: แถบเมนูตัวหนังสือสีน้ำเงินตามธีม */
+/* เลื่อนลง: แถบเมนูพื้นขาว ตัวหนังสือน้ำเงินตามธีม */
 .nav.nav-scrolled {
   background: rgba(255,255,255,0.96) !important;
   backdrop-filter: blur(18px);
@@ -1723,17 +1767,16 @@ textarea.input { min-height: 120px; resize: vertical; }
 
 .nav.nav-scrolled .logo-text {
   color: #191970 !important;
-  opacity: 1 !important;
 }
 
 .nav.nav-scrolled .logo-text span {
   color: #4169e1 !important;
-  opacity: 1 !important;
 }
 
 .nav.nav-scrolled .nav-links a {
   color: #191970 !important;
   opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .nav.nav-scrolled .nav-links a:hover,
@@ -1744,53 +1787,167 @@ textarea.input { min-height: 120px; resize: vertical; }
   opacity: 1 !important;
 }
 
-/* ปุ่มติดต่อแอดมินให้ยังเด่น */
-.nav.nav-scrolled .nav-quote {
-  color: #191970 !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(65,105,225,0.18) !important;
+/* จุด Hero เปลี่ยนเป็นเขียว */
+.eyebrow-dot {
+  background: #00c853 !important;
+  box-shadow: 0 0 0 6px rgba(0,200,83,0.18) !important;
 }
 
-/* hamburger */
-.nav.nav-home .hamburger span {
-  background: #ffffff !important;
+/* ปุ่มเลื่อนขึ้นบนสุด */
+.scroll-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #191970, #4169e1);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 18px 44px rgba(25,25,112,0.32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav.nav-scrolled .hamburger span {
-  background: #191970 !important;
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 55px rgba(25,25,112,0.42);
 }
 
-/* mobile menu: เปิดแล้วอ่านชัด */
+/* มือถือ: บังคับให้ชื่อเต็มแสดง ไม่เป็น ... */
 @media (max-width: 980px) {
-  .nav.nav-home .nav-links.open {
-    background: rgba(13,24,76,0.98) !important;
+  .nav-inner {
+    position: relative !important;
+    min-height: 78px !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
   }
 
-  .nav.nav-home .nav-links.open a {
-    color: #ffffff !important;
+  .logo-wrap {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 58px) !important;
+    gap: 10px !important;
   }
 
-  .nav.nav-scrolled .nav-links.open {
+  .logo-frame {
+    width: 56px !important;
+    height: 56px !important;
+    flex: 0 0 56px !important;
+    border-radius: 16px !important;
+  }
+
+  .logo-text {
+    max-width: calc(100vw - 150px) !important;
+    font-size: clamp(13px, 3.35vw, 16px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .logo-text span {
+    font-size: clamp(10px, 2.45vw, 12px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .hamburger {
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 42px !important;
+    margin-left: 0 !important;
+    border-radius: 14px !important;
+    background: rgba(255,255,255,0.14) !important;
+    border: 1px solid rgba(255,255,255,0.24) !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav.nav-home .hamburger span {
     background: #ffffff !important;
-    border: 1px solid rgba(65,105,225,0.18) !important;
-    box-shadow: 0 26px 80px rgba(25,25,112,0.22) !important;
   }
 
+  .nav.nav-scrolled .hamburger {
+    background: rgba(65,105,225,0.10) !important;
+    border-color: rgba(65,105,225,0.22) !important;
+  }
+
+  .nav.nav-scrolled .hamburger span {
+    background: #191970 !important;
+  }
+
+  .nav-links.open {
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(360px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 24px !important;
+    padding: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    box-shadow: 0 28px 80px rgba(25,25,112,0.24) !important;
+  }
+
+  /* เมนู 3 ขีดพื้นอ่อน ตัวหนังสือต้องน้ำเงินเข้ม */
+  .nav.nav-home .nav-links.open,
+  .nav.nav-scrolled .nav-links.open {
+    background: rgba(255,255,255,0.97) !important;
+    border: 1px solid rgba(65,105,225,0.18) !important;
+    backdrop-filter: blur(18px);
+  }
+
+  .nav.nav-home .nav-links.open a,
   .nav.nav-scrolled .nav-links.open a {
     color: #191970 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: rgba(65,105,225,0.08) !important;
+    border: 1px solid rgba(65,105,225,0.16) !important;
+    text-shadow: none !important;
   }
 
+  .nav.nav-home .nav-links.open a:hover,
+  .nav.nav-home .nav-links.open a:focus,
+  .nav.nav-home .nav-links.open a:active,
   .nav.nav-scrolled .nav-links.open a:hover,
   .nav.nav-scrolled .nav-links.open a:focus,
   .nav.nav-scrolled .nav-links.open a:active {
     color: #000000 !important;
-    background: rgba(65,105,225,0.12) !important;
+    background: rgba(65,105,225,0.16) !important;
+    opacity: 1 !important;
+  }
+
+  .nav-links.open .nav-line-quote {
+    background: linear-gradient(135deg, #0b2a88, #1e90ff) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
   }
 }
 
-/* จุดหน้า hero เปลี่ยนเป็นเขียว */
-.eyebrow-dot {
-  background: #00c853 !important;
-  box-shadow: 0 0 0 6px rgba(0,200,83,0.18) !important;
+/* จอเล็กมาก: ยอมลดฟอนต์เพื่อให้เห็นชื่อเต็ม */
+@media (max-width: 430px) {
+  .logo-frame {
+    width: 50px !important;
+    height: 50px !important;
+    flex-basis: 50px !important;
+  }
+
+  .logo-text {
+    max-width: calc(100vw - 132px) !important;
+    font-size: 12px !important;
+    letter-spacing: -0.45px !important;
+  }
+
+  .logo-text span {
+    font-size: 9px !important;
+  }
 }
 
