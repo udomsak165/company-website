@@ -160,7 +160,7 @@ export default function Home() {
 
       <section id="home" className="hero">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dot" />ขนส่งหิน–ทรายสำหรับงานจริงหน้างาน</div>
+          <div className="eyebrow"><span className="eyebrow-dot" />บรรทุก ขนส่งหิน–ทรายมืออาชีพ</div>
           <h1>
             ขนส่งหิน–ทราย
             <br />
