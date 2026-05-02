@@ -105,12 +105,10 @@ function ImagePlaceholder({ title, upload, desc, large = false }: { title: strin
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
-  const [navAtTop, setNavAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 450);
-      setNavAtTop(window.scrollY < 80);
     };
 
     handleScroll();
@@ -120,7 +118,7 @@ export default function Home() {
 
   return (
     <main className="page">
-      <nav className={navAtTop ? "nav nav-home" : "nav nav-scrolled"}>
+      <nav className="nav">
         <div className="nav-inner">
           <a href="#home" className="logo-wrap" aria-label="SAMAINIYOM KHONSONG">
             <div className="logo-frame">
